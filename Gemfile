@@ -14,13 +14,22 @@ gem 'puma', '~> 5.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
+
+# Getting an error when trying to start the rails server, something with the bootsnap gem and it being required in the boot.rb file.
+
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'active_model_serializers', '0.10.0'
+
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'jwt'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
