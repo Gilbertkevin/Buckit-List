@@ -1,5 +1,6 @@
-###
+# USER ACTIONS
 
+### User Create
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -9,4 +10,28 @@ Content-Type: application/json
   "email" : "howto@johwilson.com",
   "password": "password",
   "password_confirmation": "password",
+}
+
+### User Destroy
+DELETE http://localhost:3000/users/4
+
+# ITEM ACTIONS
+###
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+  "item_title": "Visit the Statue of Liberty",
+  "category_id": "Places to See"
+}
+
+# CATEGORY ACTIONS  
+
+###
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "id": "2",
+  "category_title": "Things to Do"
 }

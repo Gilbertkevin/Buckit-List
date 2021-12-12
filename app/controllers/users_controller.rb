@@ -8,10 +8,16 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation],
     )
     if user.save
-      render json: { message: "User created successfully" },
-             status: :created
+      render json: { message: "User created successfully" }
     else
-      render json: { errors: users.errors.full_message }, status: :bad_request
+      render json: { errors: users.errors.full_message }
     end
+  end
+
+  def destroy
+    user = User.find_by(id: params[:id])
+    user.destroy
+
+    render json: { message: "Your account has been removed." }
   end
 end
