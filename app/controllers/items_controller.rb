@@ -8,16 +8,16 @@ class ItemsController < ApplicationController
       item_title: params[:item_title],
       category_id: params[:category_id],
     )
-    item.save!
+    if item.save
+      render json: { message: "Item created successfully" }
+    else
+      render json: { errors: items.errors.full_message }
+    end
   end
 
   def show
     item = Item.find_by(id: params[:id])
-  end
 
-  def update
-  end
-
-  def destroy
+    render json: item.as_json
   end
 end

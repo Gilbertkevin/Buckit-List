@@ -5,33 +5,83 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "first_name" : "John",
-  "last_name" : "Wilson",
-  "email" : "howto@johwilson.com",
-  "password": "password",
-  "password_confirmation": "password",
+  "first_name" : "William",
+  "last_name" : "Montgomery",
+  "email" : "william@thebigredmachine.com",
+  "password": "password"
 }
 
 ### User Destroy
 DELETE http://localhost:3000/users/4
 
+
 # ITEM ACTIONS
-###
+
+### Item Create
 POST http://localhost:3000/items
 Content-Type: application/json
 
 {
-  "item_title": "Visit the Statue of Liberty",
-  "category_id": "Places to See"
+  "item_title": "Studio 54",
+  "category_id": "4"
 }
 
-# CATEGORY ACTIONS  
+### Item Show
+GET http://localhost:3000/items/7
 
-###
+# CATEGORY ACTIONS  
+### Create
 POST http://localhost:3000/categories
 Content-Type: application/json
 
 {
-  "id": "2",
-  "category_title": "Things to Do"
+  "category_title": "Places to Perform",
+  "user_id": 6
 }
+
+### Show
+GET http://localhost:3000/categories/4
+
+
+# NOTES ACTIONS  
+### Create
+POST http://localhost:3000/notes
+Content-Type: application/json
+
+{
+  "description": "Go back in time and perform stand up comedy at Studio 54 for Austin Powers and his Faja.",
+  "item_id": 7
+}
+
+### Show
+GET http://localhost:3000/notes/4
+
+
+# IMAGE ACTIONS
+
+### Create
+POST http://localhost:3000/images
+Content-Type: application/json
+
+{
+  "url": "https://www.magneticmag.com/.image/t_share/MTUwMDA1NDY1OTQ0Njk2NjAy/studio-54-disco.jpg",
+  "item_id": 4
+}
+
+### Show
+GET http://localhost:3000/images/3
+
+
+# SOCIAL POST ACTIONS
+
+### Create
+POST http://localhost:3000/social_posts
+Content-Type: application/json
+
+{
+  "url": "https://twitter.com/studio54music",
+  "item_id": 7
+}
+
+### Show
+GET http://localhost:3000/social_posts/2
