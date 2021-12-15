@@ -5,11 +5,12 @@ class UsersController < ApplicationController
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
+      password_confirmation: params[:password_confirmation],
     )
-    if user.save
+    if user.save!
       render json: { message: "User created successfully" }
     else
-      render json: { errors: users.errors.full_message }
+      render json: { errors: user.errors.full_message }, status: :bad_request
     end
   end
 

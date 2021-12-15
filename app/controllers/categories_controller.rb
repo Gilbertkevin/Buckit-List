@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def create
     category = Category.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       category_title: params[:category_title],
     )
     if category.save
@@ -15,5 +15,11 @@ class CategoriesController < ApplicationController
     category = Category.find_by(id: params[:id])
 
     render json: category.as_json
+  end
+
+  def index
+    categories = current_user.categories.where(user_id: current_user.id)
+    # categories = Category.all
+    render json: categories.as_json
   end
 end

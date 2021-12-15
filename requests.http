@@ -1,18 +1,35 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNjM5NjE3NTI5fQ.zXGXcyx28Yx82X6WT1r9ojcQMmdE77qThIbv7BQ5-FA
+
+
 # USER ACTIONS
+
+# USER SESSION
+
+### Sessions Create
+POST http://localhost:3000/sessions
+Authorization: Bearer{{jwt}}
+Content-Type: application/json
+
+{
+  "email": "bob@burgers.com",
+  "password": "password"
+  
+}
 
 ### User Create
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "first_name" : "William",
-  "last_name" : "Montgomery",
-  "email" : "william@thebigredmachine.com",
-  "password": "password"
+  "first_name" : "Gene",
+  "last_name" : "Belcher",
+  "email": "gene@burgers.com",
+  "password": "password",
+  "password_confirmation": "password"
 }
 
 ### User Destroy
-DELETE http://localhost:3000/users/4
+DELETE http://localhost:3000/users/7
 
 
 # ITEM ACTIONS
@@ -41,6 +58,10 @@ Content-Type: application/json
 
 ### Show
 GET http://localhost:3000/categories/4
+
+### Index
+GET http://localhost:3000/categories
+Authorization: Bearer{{jwt}}
 
 
 # NOTES ACTIONS  

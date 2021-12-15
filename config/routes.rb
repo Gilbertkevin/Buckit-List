@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  # SESSIONS
+  post "/sessions" => "sessions#create"
+
   # USER
   post "/users" => "users#create"
   delete "/users/:id" => "users#destroy"
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
   # CATEGORY
   post "/categories" => "categories#create"
   get "/categories/:id" => "categories#show"
+  get "/categories" => "categories#index"
 
   # NOTE
   post "/notes" => "notes#create"
