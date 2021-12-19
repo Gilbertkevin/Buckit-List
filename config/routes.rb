@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # ITEM
   post "/items" => "items#create"
   get "/items/:id" => "items#show"
+  get "/items" => "items#index"
 
   # CATEGORY
   post "/categories" => "categories#create"

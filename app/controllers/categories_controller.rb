@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
   def show
     category = Category.find_by(id: params[:id])
 
-    render json: category.as_json
+    render json: category
   end
 
   def index

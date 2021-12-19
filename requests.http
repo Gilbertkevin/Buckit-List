@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNjM5NjE3NTI5fQ.zXGXcyx28Yx82X6WT1r9ojcQMmdE77qThIbv7BQ5-FA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNjM5NzA1ODY4fQ.oRQd27REhETZxO34uCxNhWckGKiWKZ46ImbZe9BbkBU
 
 
 # USER ACTIONS
@@ -30,12 +30,14 @@ Content-Type: application/json
 
 ### User Destroy
 DELETE http://localhost:3000/users/7
+Authorization: Bearer{{jwt}}
 
 
 # ITEM ACTIONS
 
 ### Item Create
 POST http://localhost:3000/items
+Authorization: Bearer{{jwt}}
 Content-Type: application/json
 
 {
@@ -43,12 +45,18 @@ Content-Type: application/json
   "category_id": "4"
 }
 
+### Items Index
+GET http://localhost:3000/items
+Authorization: Bearer{{jwt}}
+
 ### Item Show
 GET http://localhost:3000/items/7
+Authorization: Bearer{{jwt}}
 
 # CATEGORY ACTIONS  
 ### Create
 POST http://localhost:3000/categories
+Authorization: Bearer{{jwt}}
 Content-Type: application/json
 
 {
@@ -57,16 +65,18 @@ Content-Type: application/json
 }
 
 ### Show
-GET http://localhost:3000/categories/4
+GET http://localhost:3000/categories/5
+Authorization: Bearer{{jwt}}
 
 ### Index
 GET http://localhost:3000/categories
-Authorization: Bearer{{jwt}}
+
 
 
 # NOTES ACTIONS  
 ### Create
 POST http://localhost:3000/notes
+Authorization: Bearer{{jwt}}
 Content-Type: application/json
 
 {
@@ -76,12 +86,13 @@ Content-Type: application/json
 
 ### Show
 GET http://localhost:3000/notes/4
-
+Authorization: Bearer{{jwt}}
 
 # IMAGE ACTIONS
 
 ### Create
 POST http://localhost:3000/images
+Authorization: Bearer{{jwt}}
 Content-Type: application/json
 
 {
@@ -91,12 +102,14 @@ Content-Type: application/json
 
 ### Show
 GET http://localhost:3000/images/3
+Authorization: Bearer{{jwt}}
 
 
 # SOCIAL POST ACTIONS
 
 ### Create
 POST http://localhost:3000/social_posts
+Authorization: Bearer{{jwt}}
 Content-Type: application/json
 
 {
@@ -106,3 +119,4 @@ Content-Type: application/json
 
 ### Show
 GET http://localhost:3000/social_posts/2
+Authorization: Bearer{{jwt}}
